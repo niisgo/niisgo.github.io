@@ -1,36 +1,29 @@
-# Compiled output
+# Dateien die NICHT ins Repo gehören
 /dist
 /tmp
 /out-tsc
+/.angular/cache
 
 # Node
 /node_modules
 npm-debug.log
 yarn-error.log
 
-# IDEs & editors
+# Alte Vanilla-Dateien — werden von Angular nicht gebraucht
+/css
+/js
+/index.html
+/START.bat
+/DEPLOY_GITHUB.bat
+
+# IDEs
 .idea/
-.project
-.classpath
-.c9/
-*.launch
-.settings/
-*.sublime-workspace
 .vscode/*
 !.vscode/settings.json
 !.vscode/tasks.json
 !.vscode/launch.json
 !.vscode/extensions.json
 
-# Misc
-/.angular/cache
-.sass-cache/
-/connect.lock
-/coverage
-/libpeerconnection.log
-testem.log
-/typings
-
-# System Files
+# System
 .DS_Store
 Thumbs.db

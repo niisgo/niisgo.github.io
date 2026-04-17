@@ -30,10 +30,10 @@ jobs:
       - name: Install dependencies
         run: npm ci
 
-      - name: Build Angular app
+      - name: Build Angular (base-href = / für niisgo.github.io)
         run: npx ng build --configuration production --base-href /
 
-      - name: Add .nojekyll (prevents GitHub from ignoring _assets)
+      - name: Prevent Jekyll processing
         run: touch dist/nico-portfolio/browser/.nojekyll
 
       - name: Upload Pages artifact
