@@ -1,0 +1,34 @@
+<nav class="nav" [class.scrolled]="scrolled()">
+  <a class="nav__logo" (click)="scrollTo('hero')">
+    <span class="nav__logo-name">Nico Tillmann</span>
+    <span class="nav__logo-dot">.</span>
+  </a>
+
+  <ul class="nav__links">
+    <li><button (click)="scrollTo('about')">Über mich</button></li>
+    <li><button (click)="scrollTo('skills')">Skills</button></li>
+    <li><button (click)="scrollTo('work')">Arbeit</button></li>
+    <li><button (click)="scrollTo('contact')">Kontakt</button></li>
+  </ul>
+
+  <button
+    class="nav__burger"
+    [class.open]="menuOpen()"
+    [attr.aria-expanded]="menuOpen()"
+    aria-label="Menü"
+    (click)="toggleMenu()">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+
+<!-- Mobile Overlay -->
+<div class="nav__overlay" [class.open]="menuOpen()">
+  <button (click)="scrollTo('about')">Über mich</button>
+  <button (click)="scrollTo('skills')">Skills</button>
+  <button (click)="scrollTo('work')">Arbeit</button>
+  <button (click)="scrollTo('contact')">Kontakt</button>
+  <div class="nav__overlay-legal">
+    <button (click)="modal.open('impressum'); closeMenu()">Impressum</button>
+    <button (click)="modal.open('datenschutz'); closeMenu()">Datenschutz</button>
+  </div>
+</div>

@@ -1,0 +1,99 @@
+@if (modal.active()) {
+  <div class="modal-backdrop" (click)="onBackdropClick($event)">
+    <div class="modal-box" role="dialog" aria-modal="true">
+
+      <button class="modal-close" (click)="modal.close()" aria-label="Schließen">
+        <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+          <path d="M2 2l12 12M14 2L2 14" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+        </svg>
+      </button>
+
+      <!-- IMPRESSUM -->
+      @if (modal.active() === 'impressum') {
+        <div class="modal-eyebrow">Gemäß § 5 TMG</div>
+        <h2 class="modal-title">Impressum</h2>
+
+        <h3>Angaben gemäß § 5 TMG</h3>
+        <p>Nico Tillmann<br>
+        Steinfurt, Nordrhein-Westfalen<br>
+        Deutschland</p>
+        <p>E-Mail: <a href="mailto:nicotillmann10@gmail.com">nicotillmann10&#64;gmail.com</a></p>
+
+        <h3>Verantwortlich nach § 55 Abs. 2 RStV</h3>
+        <p>Nico Tillmann, Anschrift wie oben.</p>
+
+        <h3>Haftungsausschluss</h3>
+        <p>Die Inhalte dieser Webseite wurden mit größtmöglicher Sorgfalt erstellt. Für Richtigkeit,
+        Vollständigkeit und Aktualität kann keine Gewähr übernommen werden. Als Diensteanbieter
+        bin ich gemäß § 7 Abs. 1 TMG für eigene Inhalte nach allgemeinen Gesetzen verantwortlich.</p>
+
+        <h3>Haftung für Links</h3>
+        <p>Diese Webseite enthält Links zu externen Webseiten Dritter. Für die Inhalte
+        verlinkter Seiten ist stets der jeweilige Betreiber verantwortlich.</p>
+
+        <h3>Urheberrecht</h3>
+        <p>Die auf dieser Seite erstellten Inhalte unterliegen dem deutschen Urheberrecht.
+        Vervielfältigung und Verwertung bedürfen der schriftlichen Zustimmung des Autors.</p>
+
+        <h3>Streitschlichtung (§ 36 VSBG)</h3>
+        <p>Ich bin nicht verpflichtet und nicht bereit, an Streitbeilegungsverfahren vor einer
+        Verbraucherschlichtungsstelle teilzunehmen. EU-Streitschlichtung:
+        <a href="https://ec.europa.eu/consumers/odr/" target="_blank" rel="noopener">
+          ec.europa.eu/consumers/odr
+        </a>.</p>
+      }
+
+      <!-- DATENSCHUTZ -->
+      @if (modal.active() === 'datenschutz') {
+        <div class="modal-eyebrow">DSGVO (EU) 2016/679 &amp; BDSG</div>
+        <h2 class="modal-title">Datenschutzerklärung</h2>
+
+        <h3>1. Verantwortlicher (Art. 13 DSGVO)</h3>
+        <p>Nico Tillmann, Steinfurt, NRW, Deutschland<br>
+        E-Mail: <a href="mailto:nicotillmann10@gmail.com">nicotillmann10&#64;gmail.com</a></p>
+
+        <h3>2. Art der erhobenen Daten</h3>
+        <p>Diese Webseite ist eine rein statische Portfolio-Seite. Es werden keine
+        personenbezogenen Daten durch den Betreiber aktiv erhoben, gespeichert oder verarbeitet.
+        Kein Tracking, keine Analyse-Dienste, keine Werbung, keine Formulare.</p>
+
+        <h3>3. Server-Log-Dateien</h3>
+        <p>Der Hosting-Anbieter erhebt automatisch technische Zugriffsdaten (anonymisierte IP,
+        Browsertyp, Datum/Uhrzeit). Diese werden nicht Personen zugeordnet.
+        Rechtsgrundlage: Art. 6 Abs. 1 lit. f DSGVO.</p>
+
+        <h3>4. Google Fonts</h3>
+        <p>Diese Seite nutzt Google Fonts (Google LLC, USA). Beim Aufruf baut Ihr Browser
+        eine Verbindung zu Google-Servern auf; dabei kann die IP-Adresse übertragen werden.
+        Weitere Infos: <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">
+        policies.google.com/privacy</a>. Rechtsgrundlage: Art. 6 Abs. 1 lit. f DSGVO.</p>
+
+        <h3>5. Externe Links</h3>
+        <p>Die Seite enthält Links zu GitHub und LinkedIn. Mit dem Klick verlassen Sie diese
+        Seite. Der jeweilige Anbieter ist für die Datenverarbeitung eigenverantwortlich.</p>
+
+        <h3>6. Keine Cookies</h3>
+        <p>Diese Webseite verwendet keinerlei Cookies. Eine Cookie-Einwilligung ist nicht
+        erforderlich.</p>
+
+        <h3>7. Ihre Rechte (Art. 15–21 DSGVO)</h3>
+        <ul>
+          <li>Auskunftsrecht (Art. 15)</li>
+          <li>Recht auf Berichtigung (Art. 16)</li>
+          <li>Recht auf Löschung (Art. 17)</li>
+          <li>Recht auf Einschränkung (Art. 18)</li>
+          <li>Recht auf Datenübertragbarkeit (Art. 20)</li>
+          <li>Widerspruchsrecht (Art. 21)</li>
+        </ul>
+
+        <h3>8. Aufsichtsbehörde</h3>
+        <p>LDI NRW, Postfach 20 04 44, 40102 Düsseldorf ·
+        <a href="https://www.ldi.nrw.de" target="_blank" rel="noopener">www.ldi.nrw.de</a></p>
+
+        <h3>9. Stand</h3>
+        <p>April 2026</p>
+      }
+
+    </div>
+  </div>
+}

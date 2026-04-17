@@ -1,0 +1,44 @@
+<section class="skills" id="skills">
+  <div class="skills__inner">
+
+    <header class="skills__header" appReveal>
+      <p class="section-label">02 — Skills</p>
+      <h2 class="section-heading">Was ich kann.</h2>
+    </header>
+
+    <div class="skills__grid">
+      @for (cat of categories; track cat.label) {
+        <div class="skill-cat" appReveal>
+          <h3 class="skill-cat__label">{{ cat.label }}</h3>
+          <ul class="skill-cat__list">
+            @for (skill of cat.skills; track skill.name) {
+              <li class="skill-row">
+                <div class="skill-row__top">
+                  <span class="skill-row__name">{{ skill.name }}</span>
+                  <span class="skill-row__pct">{{ skill.level }}%</span>
+                </div>
+                <div class="skill-row__track">
+                  <div
+                    class="skill-row__fill"
+                    [style.--target]="skill.level + '%'">
+                  </div>
+                </div>
+              </li>
+            }
+          </ul>
+        </div>
+      }
+    </div>
+
+    <!-- Tools chips -->
+    <div class="skills__tools" appReveal>
+      <p class="skills__tools-label">Täglich im Einsatz</p>
+      <div class="skills__tools-list">
+        @for (tool of tools; track tool) {
+          <span class="tool-chip">{{ tool }}</span>
+        }
+      </div>
+    </div>
+
+  </div>
+</section>
