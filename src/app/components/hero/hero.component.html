@@ -36,27 +36,16 @@
   </div>
 
   <div class="hero__right">
-    <!-- Foto-Platzhalter. Ersetze assets/photo.jpg mit deinem eigenen Bild. -->
     <div class="hero__photo-wrap">
-      <div class="hero__photo-placeholder">
+      <img
+        src="assets/photo.jpg.png"
+        alt="Nico Tillmann"
+        class="hero__photo"
+        loading="eager"
+        (error)="onImgError($event)"
+      />
+      <div class="hero__photo-placeholder" id="photo-fallback">
         <span>NT</span>
-      </div>
-      <!--
-        Sobald du ein Foto hast:
-        1. Bild als src/assets/photo.jpg speichern
-        2. Den <div class="hero__photo-placeholder"> löschen
-        3. Dieses <img>-Tag einkommentieren:
-
-        <img
-          src="assets/photo.jpg"
-          alt="Nico Tillmann"
-          class="hero__photo"
-          loading="eager"
-        />
-      -->
-      <div class="hero__photo-badge">
-        <span>⚽</span>
-        SC Preußen Münster
       </div>
     </div>
   </div>

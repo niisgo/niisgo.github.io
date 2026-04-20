@@ -8,7 +8,7 @@
   max-width: var(--max-w);
   margin: 0 auto;
 
-  // Entry animation state
+  // Entry animations
   &__eyebrow,
   &__headline-line,
   &__sub,
@@ -49,11 +49,7 @@
 
     &-line {
       display: block;
-
-      &--accent {
-        font-style: italic;
-        color: var(--green);
-      }
+      &--accent { font-style: italic; color: var(--green); }
     }
   }
 
@@ -71,7 +67,6 @@
     text-decoration: underline;
     text-underline-offset: 3px;
     transition: color 0.2s;
-
     &:hover { color: var(--green-mid); }
   }
 
@@ -99,23 +94,14 @@
       background: var(--green);
       color: #fff;
       border-color: var(--green);
-
-      &:hover {
-        background: var(--green-mid);
-        border-color: var(--green-mid);
-        transform: translateY(-1px);
-      }
+      &:hover { background: var(--green-mid); border-color: var(--green-mid); transform: translateY(-1px); }
     }
 
     &--ghost {
       background: transparent;
       color: var(--ink);
       border-color: var(--border);
-
-      &:hover {
-        border-color: var(--ink);
-        background: var(--surface-2);
-      }
+      &:hover { border-color: var(--ink); background: var(--surface-2); }
     }
   }
 
@@ -142,14 +128,9 @@
       animation: pulse-dot 2.4s ease infinite;
     }
 
-    &-divider {
-      width: 1px;
-      height: 14px;
-      background: var(--border);
-    }
+    &-divider { width: 1px; height: 14px; background: var(--border); }
   }
 
-  // Right column – photo
   &__right {
     display: flex;
     justify-content: center;
@@ -176,7 +157,7 @@
     background: var(--green-light);
     border: 2px dashed var(--green-mid);
     border-radius: 4px;
-    display: flex;
+    display: none;
     align-items: center;
     justify-content: center;
 
@@ -190,33 +171,14 @@
     }
   }
 
-  &__photo-badge {
-    position: absolute;
-    bottom: -16px;
-    right: -16px;
-    background: var(--ink);
-    color: #fff;
-    font-family: var(--font-mono);
-    font-size: 12px;
-    padding: 10px 16px;
-    display: flex;
-    align-items: center;
-    gap: 8px;
-    border-radius: var(--radius);
-    box-shadow: 0 4px 20px rgba(0,0,0,0.15);
-  }
-
   // Responsive
   @media (max-width: 900px) {
     grid-template-columns: 1fr;
     min-height: auto;
     padding-bottom: 80px;
-  }
 
-  @media (max-width: 900px) {
     &__right { order: -1; }
     &__photo-wrap { max-width: 260px; }
-    &__photo-badge { bottom: -12px; right: -12px; }
   }
 
   @media (max-width: 480px) {

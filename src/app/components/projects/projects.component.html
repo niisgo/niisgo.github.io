@@ -1,0 +1,117 @@
+<section class="projects" id="projects">
+  <div class="projects__inner">
+
+    <header class="projects__header" appReveal>
+      <p class="section-label">04 — Projekte</p>
+      <h2 class="section-heading">Was ich nebenbei baue.</h2>
+      <p class="projects__intro">
+        Eigene Ideen, eigene Regeln. Diese Projekte entstehen außerhalb der Arbeitszeit —
+        weil mich ein Problem geärgert hat oder weil ich etwas lernen wollte.
+      </p>
+    </header>
+
+    <div class="projects__list">
+      @for (project of projects; track project.githubUrl; let i = $index) {
+        <article
+          class="project-card"
+          [class.project-card--featured]="project.featured"
+          appReveal>
+
+          <!-- Header row -->
+          <div class="project-card__head">
+            <div class="project-card__meta">
+              <span class="project-card__num">{{ (i + 1).toString().padStart(2, '0') }}</span>
+              @if (project.featured) {
+                <span class="project-card__featured-badge">Featured</span>
+              }
+            </div>
+            <div class="project-card__actions">
+              <a
+                [href]="project.githubUrl"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="project-card__link">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/>
+                </svg>
+                GitHub
+              </a>
+              @if (project.liveUrl) {
+                <a
+                  [href]="project.liveUrl"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="project-card__link project-card__link--primary">
+                  Live ↗
+                </a>
+              }
+            </div>
+          </div>
+
+          <!-- Content -->
+          <div class="project-card__body">
+            <div class="project-card__text">
+              <h3 class="project-card__title">{{ project.title }}</h3>
+              <p class="project-card__subtitle">{{ project.subtitle }}</p>
+              <p class="project-card__desc">{{ project.description }}</p>
+
+              @if (project.featured && project.stats) {
+                <div class="project-card__stats">
+                  @for (stat of project.stats; track stat.label) {
+                    <div class="stat">
+                      <span class="stat__val">{{ stat.value }}</span>
+                      <span class="stat__label">{{ stat.label }}</span>
+                    </div>
+                  }
+                </div>
+              }
+
+              <div class="project-card__tags">
+                @for (tag of project.tags; track tag) {
+                  <span class="tag-chip">{{ tag }}</span>
+                }
+              </div>
+            </div>
+
+            <!-- Featured: live cam bild -->
+            @if (project.featured) {
+              <div class="project-card__preview">
+                <div class="cam-preview">
+                  <div class="cam-preview__header">
+                    <span class="cam-preview__dot cam-preview__dot--red"></span>
+                    <span class="cam-preview__dot cam-preview__dot--yellow"></span>
+                    <span class="cam-preview__dot cam-preview__dot--green"></span>
+                    <span class="cam-preview__title">LVM-Preußenstadion · Hellmich Webcam</span>
+                  </div>
+                  <div class="cam-preview__body">
+                    <img
+                      src="https://cam.hellmich-gruppe.de/cam018aktuell.jpg"
+                      alt="Preußenstadion Baustellenkamera aktuell"
+                      class="cam-preview__img"
+                      loading="lazy"
+                    />
+                  </div>
+                  <div class="cam-preview__footer">
+                    <span class="cam-preview__live">
+                      <span class="cam-preview__live-dot"></span>
+                      Aktuell · Hammer Str., Münster
+                    </span>
+                    <span>cam018 · Hellmich</span>
+                  </div>
+                </div>
+              </div>
+            }
+          </div>
+
+        </article>
+      }
+    </div>
+
+    <div class="projects__cta" appReveal>
+      <a href="https://github.com/niisgo" target="_blank" rel="noopener noreferrer" class="projects__cta-link">
+        Alle Projekte auf GitHub ansehen ↗
+      </a>
+    </div>
+
+  </div>
+</section>
