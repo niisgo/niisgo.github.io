@@ -55,22 +55,22 @@ export class ProjectsComponent {
       ]
     },
 
-    // ── 02 · Webcam-Bildarchiv (fertig) ────────────────────
+    // ── 02 · Next.js Full-Stack-Dashboard (fertig) ─────────
     {
-      title: 'preussenstadion-cam',
-      subtitle: 'Multi-Cam-Bildarchiv · LVM-Preußenstadion Umbau',
+      title: 'steam-stats-dashboard',
+      subtitle: 'FragBoard · CS2-Statistik-Dashboard',
       description:
-        'Web-App, die die Baustellen-Webcams des Stadionumbaus stündlich abruft und mit ' +
-        'Zeitstempel archiviert — ein digitales Bautagebuch von West-, Ost- und Nordkurve. ' +
-        'Läuft lokal per Node und fällt auf GitHub Pages auf versionierte Bild-Manifeste zurück.',
-      tags: ['Python', 'JavaScript', 'Node.js', 'Automation', 'SC Preußen Münster'],
-      badge: { label: 'Automation', kind: 'live' },
+        'Full-Stack-Dashboard, das CS2-Statistiken über die Steam Web API abruft — K/D, ' +
+        'Headshot-Quote, Winrate, Top-Waffen und Map-Verteilung als Charts. Login per ' +
+        'Steam OpenID, Edge-Runtime auf Vercel, saubere Fehlerbehandlung bei privaten Profilen.',
+      tags: ['Next.js 14', 'TypeScript', 'Tailwind', 'Recharts', 'Steam API', 'Edge'],
+      badge: { label: 'Fertig', kind: 'live' },
       featured: true,
       repoPrivate: true,
       stats: [
-        { label: 'Kameras', value: '4' },
-        { label: 'Interval', value: 'stündlich' },
-        { label: 'Format', value: 'JPG' },
+        { label: 'Framework', value: 'Next.js' },
+        { label: 'Charts', value: 'Recharts' },
+        { label: 'Login', value: 'Steam' },
       ]
     },
 
@@ -89,6 +89,43 @@ export class ProjectsComponent {
         { label: 'Frontend', value: 'React' },
         { label: 'Backend', value: 'Express' },
         { label: 'Typ', value: 'PWA' },
+      ]
+    },
+
+    // ── 04 · Angular-Browsergame (in Arbeit) ───────────────
+    {
+      title: 'ultras-infinity',
+      subtitle: 'Ultras Infinity · Idle-/Clicker-Fußballgame',
+      description:
+        'Ein Idle-/Clicker-Browsergame rund um Fußball — gebaut als Angular-19-App ' +
+        '(Standalone) mit strikt typisiertem TypeScript, Tailwind und sauberer, ' +
+        'skalierbarer Architektur inklusive Linting und CI.',
+      tags: ['Angular 19', 'TypeScript', 'Tailwind', 'SCSS', 'ESLint', 'Game'],
+      badge: { label: 'In Arbeit', kind: 'wip' },
+      repoPrivate: true,
+      stats: [
+        { label: 'Framework', value: 'Angular 19' },
+        { label: 'Style', value: 'Tailwind' },
+        { label: 'Typ', value: 'Idle-Game' },
+      ]
+    },
+
+    // ── 05 · Webcam-Bildarchiv (fertig) ────────────────────
+    {
+      title: 'preussenstadion-cam',
+      subtitle: 'Multi-Cam-Bildarchiv · LVM-Preußenstadion Umbau',
+      description:
+        'Web-App, die die Baustellen-Webcams des Stadionumbaus stündlich abruft und mit ' +
+        'Zeitstempel archiviert — ein digitales Bautagebuch von West-, Ost- und Nordkurve. ' +
+        'Läuft lokal per Node und fällt auf GitHub Pages auf versionierte Bild-Manifeste zurück.',
+      tags: ['Python', 'JavaScript', 'Node.js', 'Automation', 'SC Preußen Münster'],
+      badge: { label: 'Automation', kind: 'live' },
+      featured: true,
+      repoPrivate: true,
+      stats: [
+        { label: 'Kameras', value: '4' },
+        { label: 'Interval', value: 'stündlich' },
+        { label: 'Format', value: 'JPG' },
       ]
     },
 
