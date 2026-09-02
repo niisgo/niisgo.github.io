@@ -81,6 +81,24 @@ button {
   &.delay-4 { transition-delay: 0.28s; }
 }
 
+/* Reduzierte Bewegung: Inhalte sofort zeigen, keine Animation
+   (Barrierefreiheit + Fallback, falls JS/IntersectionObserver aussetzt). */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
+
+  [appReveal] {
+    opacity: 1 !important;
+    transform: none !important;
+  }
+}
+
 /* ── SELECTION ── */
 ::selection {
   background: var(--green);
