@@ -9,7 +9,7 @@
 
   &__header {
     margin-bottom: clamp(48px, 7vw, 72px);
-    .section-label { margin-bottom: 12px; }
+    .section-label  { margin-bottom: 12px; }
     .section-heading { margin-bottom: 16px; }
   }
 
@@ -45,7 +45,7 @@
   }
 }
 
-// ─── Project Card ────────────────────────────────────────
+// ─── Card ────────────────────────────────────────────────
 
 .project-card {
   border: 1px solid var(--border);
@@ -59,24 +59,36 @@
     border-color: rgba(27, 94, 56, 0.25);
   }
 
+  // Featured (live project)
   &--featured {
-    border-color: rgba(27, 94, 56, 0.2);
+    border-color: rgba(27, 94, 56, 0.22);
     background: var(--green-xlight);
   }
+
+  // WIP (upcoming)
+  &--wip {
+    opacity: 0.82;
+
+    &:hover { opacity: 1; }
+  }
+
+  // ── Head ──────────────────────────────────────────────
 
   &__head {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 14px clamp(18px, 3vw, 28px);
+    padding: 13px clamp(16px, 3vw, 26px);
     border-bottom: 1px solid var(--border);
     background: var(--surface);
+    flex-wrap: wrap;
+    gap: 10px;
   }
 
   &__meta {
     display: flex;
     align-items: center;
-    gap: 12px;
+    gap: 10px;
   }
 
   &__num {
@@ -86,22 +98,33 @@
     letter-spacing: 0.06em;
   }
 
-  &__featured-badge {
+  &__badge {
     font-family: var(--font-mono);
     font-size: 10px;
     letter-spacing: 0.1em;
     text-transform: uppercase;
-    color: var(--green);
-    background: var(--green-light);
-    border: 1px solid rgba(27, 94, 56, 0.2);
     padding: 3px 8px;
     border-radius: 2px;
+    border: 1px solid;
+
+    &--live {
+      color: var(--green);
+      background: var(--green-light);
+      border-color: rgba(27, 94, 56, 0.2);
+    }
+
+    &--wip {
+      color: var(--muted);
+      background: var(--surface-2);
+      border-color: var(--border);
+    }
   }
 
   &__actions {
     display: flex;
     gap: 8px;
     align-items: center;
+    flex-wrap: wrap;
   }
 
   &__link {
@@ -116,6 +139,7 @@
     border: 1px solid var(--border);
     border-radius: 2px;
     transition: color 0.2s, border-color 0.2s, background 0.2s;
+    white-space: nowrap;
 
     &:hover {
       color: var(--ink);
@@ -134,21 +158,41 @@
         border-color: var(--green);
       }
     }
+
+    &--disabled {
+      cursor: default;
+      color: var(--muted);
+      opacity: 0.5;
+
+      &:hover {
+        color: var(--muted);
+        border-color: var(--border);
+        background: transparent;
+      }
+    }
   }
+
+  // ── Body ──────────────────────────────────────────────
 
   &__body {
     display: grid;
     grid-template-columns: 1fr 420px;
     gap: clamp(24px, 4vw, 48px);
-    padding: clamp(24px, 4vw, 36px) clamp(18px, 3vw, 28px);
+    padding: clamp(20px, 3.5vw, 34px) clamp(16px, 3vw, 26px);
     align-items: start;
 
-    @media (max-width: 900px) { grid-template-columns: 1fr; }
+    // Kein Cam-Preview → volle Breite
+    &--full {
+      grid-template-columns: 1fr;
+      max-width: 680px;
+    }
+
+    @media (max-width: 860px) { grid-template-columns: 1fr; }
   }
 
   &__title {
     font-family: var(--font-mono);
-    font-size: clamp(17px, 2vw, 21px);
+    font-size: clamp(16px, 1.8vw, 20px);
     font-weight: 500;
     color: var(--ink);
     letter-spacing: -0.01em;
@@ -156,28 +200,29 @@
   }
 
   &__subtitle {
-    font-size: 13px;
-    color: var(--green);
-    font-weight: 500;
-    margin-bottom: 14px;
     font-family: var(--font-mono);
+    font-size: 12px;
+    color: var(--green);
+    font-weight: 400;
+    margin-bottom: 12px;
+    line-height: 1.5;
   }
 
   &__desc {
-    font-size: clamp(14px, 1.5vw, 15px);
+    font-size: clamp(13px, 1.4vw, 15px);
     color: var(--muted);
-    line-height: 1.8;
-    margin-bottom: 20px;
-    max-width: 520px;
+    line-height: 1.82;
+    margin-bottom: 18px;
   }
 
   &__stats {
     display: flex;
-    gap: 24px;
-    margin-bottom: 20px;
-    padding: 14px 18px;
-    background: rgba(27, 94, 56, 0.06);
-    border: 1px solid rgba(27, 94, 56, 0.12);
+    gap: 20px;
+    flex-wrap: wrap;
+    margin-bottom: 18px;
+    padding: 12px 16px;
+    background: rgba(27, 94, 56, 0.05);
+    border: 1px solid rgba(27, 94, 56, 0.1);
     border-radius: 3px;
     width: fit-content;
   }
@@ -189,6 +234,8 @@
   }
 }
 
+// ─── Stat ─────────────────────────────────────────────────
+
 .stat {
   display: flex;
   flex-direction: column;
@@ -196,7 +243,7 @@
 
   &__val {
     font-family: var(--font-display);
-    font-size: 20px;
+    font-size: 19px;
     font-weight: 700;
     color: var(--green);
     line-height: 1;
@@ -211,6 +258,8 @@
   }
 }
 
+// ─── Tag ──────────────────────────────────────────────────
+
 .tag-chip {
   font-family: var(--font-mono);
   font-size: 11px;
@@ -224,7 +273,7 @@
   &:hover { border-color: var(--green); color: var(--green); }
 }
 
-// ─── Live Cam ─────────────────────────────────────────────
+// ─── Cam Preview ──────────────────────────────────────────
 
 .cam-preview {
   border: 1px solid var(--border);
@@ -254,7 +303,6 @@
     font-family: var(--font-mono);
     font-size: 11px;
     color: rgba(255,255,255,0.4);
-    letter-spacing: 0.04em;
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
@@ -283,7 +331,7 @@
     font-family: var(--font-mono);
     font-size: 10px;
     color: rgba(255,255,255,0.3);
-    letter-spacing: 0.06em;
+    letter-spacing: 0.05em;
   }
 
   &__live {
