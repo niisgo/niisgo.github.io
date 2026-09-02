@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="de">
+<head>
+  <meta charset="utf-8">
+  <title>404 — Nico Tillmann</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex">
+  <link rel="icon" type="image/x-icon" href="/favicon.ico">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400..800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <style>
+    :root { --bg:#f7f5f0; --ink:#1a1a1a; --green:#1b5e38; --muted:#6b6b6b; --line:#dedbd4; }
+    * { margin:0; box-sizing:border-box; }
+    body {
+      min-height:100vh; display:flex; align-items:center; justify-content:center;
+      background:var(--bg); color:var(--ink);
+      font-family:'JetBrains Mono', ui-monospace, monospace;
+      padding:24px; text-align:center;
+    }
+    .wrap { max-width:480px; }
+    .code {
+      font-family:'Fraunces', Georgia, serif; font-weight:700;
+      font-size:clamp(88px,18vw,140px); line-height:1; letter-spacing:-0.03em;
+    }
+    .code span { color:var(--green); }
+    h1 { font-family:'Fraunces', Georgia, serif; font-weight:600; font-size:clamp(20px,4vw,26px); margin:8px 0 14px; }
+    p { color:var(--muted); font-size:14px; line-height:1.7; margin-bottom:28px; }
+    a {
+      display:inline-flex; align-items:center; gap:8px;
+      font-size:13px; color:var(--ink); text-decoration:none;
+      border:1px solid var(--ink); border-radius:2px; padding:10px 18px;
+      transition:background .2s, color .2s;
+    }
+    a:hover { background:var(--green); border-color:var(--green); color:#fff; }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <div class="code">4<span>0</span>4</div>
+    <h1>Seite nicht gefunden</h1>
+    <p>Diese Seite existiert nicht (mehr). Vielleicht ein alter Link oder ein Tippfehler.</p>
+    <a href="/">← Zurück zur Startseite</a>
+  </div>
+</body>
+</html>
