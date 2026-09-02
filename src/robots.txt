@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://niisgo.github.io/sitemap.xml
