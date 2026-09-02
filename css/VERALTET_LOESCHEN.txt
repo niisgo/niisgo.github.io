@@ -1,2 +1,0 @@
-/* Dieser Ordner gehört zum alten Vanilla-Projekt und kann gelöscht werden.
-   Das Angular-Projekt liegt in src/ */

@@ -64,7 +64,7 @@
           </div>
 
           <!-- Body -->
-          <div class="project-card__body" [class.project-card__body--full]="!project.camUrl">
+          <div class="project-card__body project-card__body--full">
 
             <div class="project-card__text">
               <h3 class="project-card__title">{{ project.title }}</h3>
@@ -88,35 +88,6 @@
                 }
               </div>
             </div>
-
-            <!-- Cam-Preview: nur für preussenstadion-cam -->
-            @if (project.camUrl) {
-              <div class="project-card__preview">
-                <div class="cam-preview">
-                  <div class="cam-preview__header">
-                    <span class="cam-preview__dot cam-preview__dot--red"></span>
-                    <span class="cam-preview__dot cam-preview__dot--yellow"></span>
-                    <span class="cam-preview__dot cam-preview__dot--green"></span>
-                    <span class="cam-preview__title">LVM-Preußenstadion · Hellmich Webcam</span>
-                  </div>
-                  <div class="cam-preview__body">
-                    <img
-                      [src]="project.camUrl"
-                      alt="Preußenstadion Baustellenkamera aktuell"
-                      class="cam-preview__img"
-                      loading="lazy"
-                    />
-                  </div>
-                  <div class="cam-preview__footer">
-                    <span class="cam-preview__live">
-                      <span class="cam-preview__live-dot"></span>
-                      Aktuell · Hammer Str., Münster
-                    </span>
-                    <span>cam018 · Hellmich</span>
-                  </div>
-                </div>
-              </div>
-            }
 
           </div>
 

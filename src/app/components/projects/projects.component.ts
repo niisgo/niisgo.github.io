@@ -1,5 +1,4 @@
 import { Component, ChangeDetectionStrategy } from '@angular/core';
-import { NgClass } from '@angular/common';
 import { RevealDirective } from '../../directives/reveal.directive';
 
 export interface ProjectStat {
@@ -23,13 +22,12 @@ export interface Project {
   liveUrl?: string;        // nur echte, öffentlich erreichbare Demo
   githubUrl?: string;      // nur setzen, wenn das Repo öffentlich ist
   stats?: ProjectStat[];
-  camUrl?: string;         // Live-Bild-Vorschau (nur preussenstadion-cam)
 }
 
 @Component({
   selector: 'app-projects',
   standalone: true,
-  imports: [NgClass, RevealDirective],
+  imports: [RevealDirective],
   changeDetection: ChangeDetectionStrategy.OnPush,
   templateUrl: './projects.component.html',
   styleUrl: './projects.component.scss'

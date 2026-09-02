@@ -1,0 +1,9 @@
+# Einheitliche Zeilenenden — verhindert LF/CRLF-Warnungen auf Windows.
+* text=auto eol=lf
+
+# Binärdateien nicht anfassen.
+*.png binary
+*.jpg binary
+*.ico binary
+*.woff binary
+*.woff2 binary
